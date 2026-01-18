@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-beige text-navy;
-  }
+:root {
+  --color-navy: #2F4156;
+  --color-beige: #F5EFEB;
+  --color-sky-blue: #C8D9E6;
+  --color-dark-pink: #F7C9D4;
+  --color-pale-pink: #FFE1E6;
 }
+
+body {
+  background-color: var(--color-beige);
+  color: var(--color-navy);
+}
+
+.bg-beige { background-color: var(--color-beige); }
+.bg-sky-blue { background-color: var(--color-sky-blue); }
+.bg-pale-pink { background-color: var(--color-pale-pink); }
+.bg-dark-pink { background-color: var(--color-dark-pink); }
+.bg-navy { background-color: var(--color-navy); }
+
+.text-navy { color: var(--color-navy); }
+.text-dark-pink { color: var(--color-dark-pink); }
 
 @layer components {
   .section-container {

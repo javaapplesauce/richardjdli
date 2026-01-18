@@ -91,7 +91,7 @@ export default function Hobbies() {
             I'd love to connect with people who share similar interests or want to explore new ones together!
           </p>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:lirichard6474@gmail.com"
             className="inline-block px-8 py-3 bg-dark-pink text-white rounded-lg font-semibold hover:bg-dark-pink/90 transition-colors"
           >
             Get in Touch

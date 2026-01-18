@@ -27,12 +27,27 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8">
           <ScrubElement>
             <Card
-              title="University"
-              description="Currently studying Computer Science with a focus on AI/ML and systems design."
+              title="Columbia University"
+              description="Computer Science Major, Minor in East Asian Language and Culture"
             >
-              <div className="space-y-2 text-sm text-navy/70">
-                <p>• Relevant Coursework: Algorithms, Data Structures, ML, Distributed Systems</p>
-                <p>• Clubs: [Your clubs here]</p>
+              <div className="space-y-3 text-sm text-navy/70">
+                <div>
+                  <p className="font-semibold text-navy mb-1">Previous Classes:</p>
+                  <p>Data Structures and Algorithms, Classical Machine Learning, Advanced Systems Programming, Deep Learning for Computer Vision, Discrete Mathematics, Linear Algebra & Probability</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-navy mb-1">Current Classes:</p>
+                  <p>Operating Systems, Fundamentals of Computer Systems, Applied Machine Learning</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-navy mb-1">Clubs:</p>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Wushu (Vice President Fall '25 - present)</li>
+                    <li>Application Development Initiative (Exec Board Co-lead Fall '25 - present)</li>
+                    <li>Columbia Space Initiative (SUITS Mission @ NASA Subteeam lead Spring '26 - present)</li>
+                    <li>Columbia Wealth Management Club (Marketing direction Spring '25, Treasurer Fall '25-present)</li>
+                  </ul>
+                </div>
               </div>
             </Card>
           </ScrubElement>
@@ -40,12 +55,21 @@ export default function Home() {
           <PopUpElement>
             <Card
               title="Academics"
-              description="Committed to excellence in both coursework and practical learning experiences."
+              description="GPA 3.65/4.00 • Dean's List Spring '25, Fall '25"
             >
-              <div className="space-y-2 text-sm text-navy/70">
-                <p>• GPA: [Your GPA]</p>
-                <p>• Dean's List / Honors: [If applicable]</p>
-                <p>• Key Skills: Python, TypeScript, Systems Design</p>
+              <div className="space-y-3 text-sm text-navy/70">
+                <div>
+                  <p className="font-semibold text-navy mb-1">Languages</p>
+                  <p>Python, Java, C, R, SQL, JavaScript, C#, TypeScript, Bash</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-navy mb-1">ML & AI</p>
+                  <p>Vision-Language Models, CLIP, Retrieval-Augmented Generation, LLMs, Text-to-Audio</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-navy mb-1">Frameworks & Tools</p>
+                  <p>PyTorch, PyTorch Lightning, React, Supabase, Unity, NumPy, Hydra, Playwright, AWS (S3/EC2), PostgreSQL, PineconeDB, Docker, CUDA, Linux, Git</p>
+                </div>
               </div>
             </Card>
           </PopUpElement>
@@ -57,37 +81,37 @@ export default function Home() {
         <div className="max-w-2xl">
           <PopUpElement>
             <TimelineItem
-              year="2024"
-              title="Internship at [Company]"
-              description="Developed full-stack features using React and Node.js, improving performance by 40%."
-              icon="🚀"
+              year="Jan 2025"
+              title="ML Engineer Intern @ Orion Labs"
+              description="Spearheaded development of a novel pipeline integrating vision-language models with RAG systems to extract structured insights from unlabeled data."
+              icon="🤖"
             />
           </PopUpElement>
 
           <PopUpElement delay={1}>
             <TimelineItem
-              year="2023"
-              title="Research Project"
-              description="Conducted research on machine learning optimization techniques and published findings."
+              year="Aug 2024"
+              title="Machine Learning Research Intern @ Columbia University"
+              description="Developed and optimized a text-to-audio diffusion model achieving 85% accuracy on the WaveNet objective; contributed technical blog post read by 1000+ practitioners in ML community."
               icon="🔬"
             />
           </PopUpElement>
 
           <PopUpElement delay={2}>
             <TimelineItem
-              year="2022"
-              title="Personal Project Launch"
-              description="Built and deployed a web application that helped me explore full-stack development."
+              year="May 2024"
+              title="Software Engineer Intern @ Pluto Finance"
+              description="Architected and deployed web-based 3D financial visualization platform using React and Three.js, enabling users to explore financial market data through interactive 3D interface."
               icon="💡"
             />
           </PopUpElement>
 
           <PopUpElement delay={3}>
             <TimelineItem
-              year="2021"
-              title="Started Journey"
-              description="Began programming and exploring the intersection of tech and passion projects."
-              icon="🌟"
+              year="Jun 2023"
+              title="Research Intern @ Stony Brook University"
+              description="Implemented GPU-accelerated custom kernels in CUDA C++ achieving 87% peak performance on NVIDIA V100 for accelerated machine learning computations."
+              icon="🚀"
             />
           </PopUpElement>
         </div>
@@ -120,19 +144,23 @@ export default function Home() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:lirichard6474@gmail.com"
                 className="px-8 py-3 bg-dark-pink text-white rounded-lg font-semibold hover:bg-dark-pink/90 transition-colors"
               >
                 Email Me
               </a>
               <a
-                href="#"
+                href="https://github.com/javaapplesauce"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-beige transition-colors"
               >
                 GitHub
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/richardjdli/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-beige transition-colors"
               >
                 LinkedIn

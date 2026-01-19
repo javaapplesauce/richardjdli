@@ -24,8 +24,8 @@ export default function Home() {
 
       {/* About Me - College */}
       <Section title="Education" background="sky-blue">
-        <div className="grid md:grid-cols-2 gap-8">
-          <ScrubElement>
+        <PopUpElement>
+          <div className="grid md:grid-cols-2 gap-8">
             <Card
               title="Columbia University"
               description="Computer Science Major, Minor in East Asian Language and Culture"
@@ -50,9 +50,7 @@ export default function Home() {
                 </div>
               </div>
             </Card>
-          </ScrubElement>
 
-          <PopUpElement>
             <Card
               title="Academics"
               description="GPA 3.65/4.00 • Dean's List Spring '25, Fall '25"
@@ -72,8 +70,8 @@ export default function Home() {
                 </div>
               </div>
             </Card>
-          </PopUpElement>
-        </div>
+          </div>
+        </PopUpElement>
       </Section>
 
       {/* Experience Timeline */}

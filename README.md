@@ -1,160 +1,53 @@
-# Richard Li - Portfolio Website
+# richardjdli.com
 
-A modern, animated personal portfolio built with **Next.js**, **Tailwind CSS**, and **GSAP ScrollTrigger** featuring scroll-triggered animations similar to Zoox.
+Personal portfolio for Richard JD Li — a single, continuous experience built around a
+live knowledge-graph canvas ("Athenæum"), with client-side transitions between the
+landing page, project detail pages, and an about page (no reloads).
 
-## 🎨 Features
+## Stack
 
-- **Pop-up on Scroll**: Elements scale from 0 to 1 as they enter the viewport
-- **Scrub Effect**: Animations perfectly synced with scroll wheel movement
-- **Responsive Design**: Works seamlessly on mobile, tablet, and desktop
-- **Custom Color Palette**: Navy, Beige, Sky Blue, Dark Pink, and Pale Pink
-- **Smooth Transitions**: Enhanced user experience with Tailwind CSS and GSAP
+- **Next.js** (App Router, `output: 'export'` → static site)
+- **React** + **TypeScript**
+- Plain CSS + inline styles (no UI framework); fonts via Google Fonts
+  (Libre Caslon Text, JetBrains Mono, Spectral, IBM Plex Mono)
+- Deploys to **Cloudflare Pages** → richardjdli.com
 
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 14 with App Router
-- **Styling**: Tailwind CSS
-- **Animations**: GSAP with ScrollTrigger
-- **Language**: TypeScript
-- **Deployment**: Cloudflare Workers
-
-## 📁 Project Structure
-
-```
-portfolio-website/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx         # Root layout with navigation
-│   │   ├── page.tsx           # Home/About page
-│   │   ├── internships/
-│   │   │   └── page.tsx
-│   │   ├── research/
-│   │   │   └── page.tsx
-│   │   ├── projects/
-│   │   │   └── page.tsx
-│   │   ├── hobbies/
-│   │   │   └── page.tsx
-│   │   └── globals.css        # Global styles
-│   ├── components/
-│   │   ├── Navigation.tsx     # Top navigation bar
-│   │   ├── ScrollAnimations.tsx # PopUpElement & ScrubElement
-│   │   └── Section.tsx        # Reusable section components
-│   └── hooks/
-│       └── useScrollAnimations.ts
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-├── tsconfig.json
-└── next.config.js
-```
-
-## 🚀 Getting Started
-
-### Installation
+## Develop
 
 ```bash
-cd portfolio-website
 npm install
+npm run dev        # http://localhost:3000
+npm run build      # static export to ./out
 ```
 
-### Development
+## Structure
 
-```bash
-npm run dev
+```
+src/
+  app/
+    layout.tsx              # html shell, metadata, font links
+    page.tsx                # renders <Portfolio/>
+    globals.css             # design CSS + scoped UW-diagram animations
+  components/
+    Portfolio.tsx           # the whole experience: graph canvas, custom cursor,
+                            # scroll choreography, and the home / detail / about screens
+    UwPipelineDiagram.tsx   # animated scRNA-seq pipeline figure (UW project)
+  lib/
+    projects.ts             # content source of truth (projects, experience, tools…)
+    css.ts                  # parse inline CSS strings into React style objects
+public/
+  assets/                   # images, logos, textures
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Editing content
 
-### Build for Production
+All copy lives in [`src/lib/projects.ts`](src/lib/projects.ts) — projects, the about-page
+experience timeline, the toolkit list, and the rotating status phrases. Images live in
+`public/assets/`.
 
-```bash
-npm run build
-npm start
-```
+## Deep links
 
-## 📝 Customization
+The experience is one page, but individual views are linkable:
 
-### Update Personal Information
-
-- Edit `src/app/page.tsx` to update your introduction
-- Modify internship details in `src/app/internships/page.tsx`
-- Add your research projects in `src/app/research/page.tsx`
-- Showcase your projects in `src/app/projects/page.tsx`
-- Customize hobbies in `src/app/hobbies/page.tsx`
-
-### Color Palette
-
-Colors are defined in `tailwind.config.js`:
-
-```js
-colors: {
-  navy: '#2F4156',
-  beige: '#F5EFEB',
-  'sky-blue': '#C8D9E6',
-  'dark-pink': '#F7C9D4',
-  'pale-pink': '#FFE1E6',
-}
-```
-
-### Animation Tuning
-
-Modify animation timings in `src/components/ScrollAnimations.tsx`:
-
-```tsx
-// Pop-up duration and easing
-duration: 0.8,
-ease: 'back.out',
-
-// Scrub intensity (1.2 = smoothly follows scroll)
-scrub: 1.2,
-```
-
-## 🌐 Deployment with Cloudflare Workers
-
-### Setup
-
-1. Install Wrangler CLI:
-```bash
-npm install -g wrangler
-```
-
-2. Create a `wrangler.toml` in the root directory:
-```toml
-name = "richard-portfolio"
-type = "javascript"
-account_id = "YOUR_ACCOUNT_ID"
-workers_dev = true
-route = "your-domain.com/*"
-```
-
-3. Deploy:
-```bash
-wrangler publish
-```
-
-For more details, see [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/).
-
-## 📚 Learning Resources
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)
-- [Framer Motion](https://www.framer.com/motion/)
-
-## 🎯 Future Enhancements
-
-- [ ] Add dark mode toggle
-- [ ] Implement blog section
-- [ ] Add contact form with email notification
-- [ ] Image optimization with Next.js Image
-- [ ] SEO improvements with structured data
-- [ ] Analytics integration
-- [ ] Testing (Jest + React Testing Library)
-
-## 📧 Contact
-
-Feel free to customize the contact links and email addresses throughout the site.
-
-## 📄 License
-
-This project is personal and free to use for inspiration.
+- `/?p=<projectId>` opens a project detail (e.g. `/?p=uw`)
+- `/?about` opens the about page

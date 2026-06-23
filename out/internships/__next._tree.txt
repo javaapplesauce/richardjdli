@@ -1,2 +1,0 @@
-:HL["/_next/static/chunks/fe7f327d535c1f48.css","style"]
-0:{"buildId":"aEgBuEtrg-HZ8XMcGEG6D","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"internships","paramType":null,"paramKey":"internships","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
